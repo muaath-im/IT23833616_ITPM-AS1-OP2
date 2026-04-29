@@ -1,0 +1,2 @@
+test_case_id,feature,url,file_type,file_path,preview_detected,status,screenshot,details,executed_at
+Pos_0036,Image format conversion preview functionality,https://www.pixelssuite.com/convert-to-png,PNG,sample.png,True,PASS,results\preview_pass.png,PNG upload preview was displayed successfully.,2026-04-29T17:41:02

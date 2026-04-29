@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+*.zip
+manual_workbook_preview.png
