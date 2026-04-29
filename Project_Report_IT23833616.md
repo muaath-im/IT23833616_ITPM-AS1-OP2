@@ -112,16 +112,28 @@ The manual workbook was checked to confirm:
 - Expected outputs and assumptions are clear.
 - Status values are recorded in the workbook.
 
-## 11. Constraints and Limitations
+## 11. Website Issues Identified
+
+The following issues are related to the live Pixelssuite website behavior and are recorded as usability or functional findings:
+
+| Issue | Affected Area | Impact |
+|---|---|---|
+| PDF-to-Word and Word-to-PDF pages display image-format support text such as PNG, JPG, and WEBP. | Document conversion | Users may be confused about the correct input type even though the file input accepts PDF or Word files. |
+| Unsupported file uploads do not always show a clear validation message. | Upload-based tools | Users may not understand why an invalid file was not processed. |
+| PDF editor feedback for invalid input can remain unclear or show a generic working state. | PDF editing | Users may not know whether the file is invalid or still processing. |
+
+These issues are outside the automation project code because they belong to the external website under test. They are documented in the manual test cases and treated as usability findings.
+
+## 12. Constraints and Limitations
 
 1. The project is limited to the Pixelssuite website.
 2. Only functional testing, usability testing, manual testing, and one automation test are included.
 3. Backend API, performance, scalability, and security testing are outside scope.
 4. Only one scenario is automated.
 5. The automated scenario uses a PNG image and checks preview functionality.
-6. The GitHub repository link must be added after the project is pushed to a public repository.
+6. The public GitHub repository link is provided in the separate repository link text file.
 
-## 12. Final Folder Structure
+## 13. Final Folder Structure
 
 ```text
 IT23833616/
@@ -139,7 +151,7 @@ IT23833616/
         `-- preview_pass.png
 ```
 
-## 13. README.md Content
+## 14. README.md Content
 
 The README includes:
 
@@ -152,7 +164,7 @@ The README includes:
 - Expected outputs
 - Project structure
 
-## 14. Final Submission Checklist
+## 15. Final Submission Checklist
 
 | Item | Status |
 |---|---|

@@ -64,6 +64,14 @@ def check_preview_visible(page):
     script = """
     () => {
         const visible = (el) => !!(el && el.getClientRects && el.getClientRects().length);
+        const meaningfulMedia = (el) => {
+            if (!visible(el)) return false;
+            const rect = el.getBoundingClientRect();
+            if (rect.width < 20 || rect.height < 20) return false;
+            if (el.tagName === "IMG" && (!el.complete || el.naturalWidth === 0)) return false;
+            if (el.tagName === "CANVAS" && (el.width === 0 || el.height === 0)) return false;
+            return true;
+        };
 
         const previewLabels = Array.from(document.querySelectorAll("body *"))
             .filter(el => el.childElementCount === 0)
@@ -74,12 +82,20 @@ def check_preview_visible(page):
             let parent = label;
             for (let i = 0; i < 6 && parent; i++) {
                 const media = Array.from(parent.querySelectorAll("img, canvas, svg, video"))
-                    .filter(el => visible(el));
+                    .filter(el => meaningfulMedia(el));
                 if (media.length > 0) {
                     return true;
                 }
                 parent = parent.parentElement;
             }
+        }
+
+        const pageMedia = Array.from(document.querySelectorAll("main img, main canvas, section img, section canvas"))
+            .filter(el => meaningfulMedia(el))
+            .filter(el => !el.closest("nav, header, footer, button"));
+
+        if (pageMedia.length > 0) {
+            return true;
         }
 
         return false;
