@@ -20,7 +20,8 @@ Image format conversion preview functionality.
 
 ## Installation Steps
 
-```bash
+```powershell
+cd /d D:\test_automation_ui\IT23833616\test_automation_ui
 pip install -U pip
 pip install playwright openpyxl
 playwright install
@@ -28,7 +29,8 @@ playwright install
 
 If Windows does not recognize the `playwright` command, run Playwright through Python instead:
 
-```bash
+```powershell
+cd /d D:\test_automation_ui\IT23833616\test_automation_ui
 python -m pip install -U pip
 python -m pip install playwright openpyxl
 python -m playwright install
@@ -36,13 +38,13 @@ python -m playwright install
 
 ## Run Command
 
-```bash
+```powershell
 python image_preview_test.py --url "https://www.pixelssuite.com/convert-to-png" --slow-mo-ms 2000
 ```
 
 For a non-visual/headless execution, use:
 
-```bash
+```powershell
 python image_preview_test.py --url "https://www.pixelssuite.com/convert-to-png" --slow-mo-ms 2000 --headless
 ```
 
